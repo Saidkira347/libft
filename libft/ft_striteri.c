@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:25:47 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/06 23:40:34 by souhanat         ###   ########.fr       */
+/*   Created: 2022/10/10 12:09:59 by souhanat          #+#    #+#             */
+/*   Updated: 2022/10/10 12:44:11 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
-	int res;
-	int sign;
-
-	res = 0;
-	sign = 1;
+	unsigned int	i;
+	unsigned int	len;
+	
+	if (!s)
+		return ;
 	i = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	len = ft_strlen(s);
+	while (i < len)
 	{
+		f(i, &s[i]);
 		i++;
 	}
-	while (str[i] >= 43 && str[i] <= 45)
-	{
-		if (str[i] == 45)
-			sign *= -1;
-		i++;
-		break;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - 48);
-		i++;
-	}
-	return (res * sign);		
 }

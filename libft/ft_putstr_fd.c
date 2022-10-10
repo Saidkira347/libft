@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:25:47 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/06 23:40:34 by souhanat         ###   ########.fr       */
+/*   Created: 2022/10/10 15:07:51 by souhanat          #+#    #+#             */
+/*   Updated: 2022/10/10 15:10:12 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	int res;
-	int sign;
-
-	res = 0;
-	sign = 1;
 	i = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	if (!s)
+		return ;
+	while (s[i])
 	{
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	while (str[i] >= 43 && str[i] <= 45)
-	{
-		if (str[i] == 45)
-			sign *= -1;
-		i++;
-		break;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - 48);
-		i++;
-	}
-	return (res * sign);		
 }

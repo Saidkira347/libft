@@ -1,32 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 10:59:17 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/10 01:01:59 by souhanat         ###   ########.fr       */
+/*   Created: 2022/10/08 14:54:56 by souhanat          #+#    #+#             */
+/*   Updated: 2022/10/10 01:11:39 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-
-	i = 0;
-	if (!needle[i])
-		return ((char *) haystack);
-	if (len == 0)
+	size_t	j;
+	char	*name;
+	
+	if(!s)
 		return (NULL);
-	while (haystack[i] && i < len)
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	else if (ft_strlen(s) - start < len)
+		name = (char *)malloc(ft_strlen(s) - start + 1);
+	else
+		name = (char *)malloc(len + 1);
+	j = start;
+	i = 0;
+	if (!name)
+		return (NULL);
+	if (start < ft_strlen(s))
 	{
-		if (!ft_strncmp(needle, (haystack + i), ft_strlen(needle))
-			&& i < (len - (ft_strlen(needle) - 1)))
-			return ((char *)&haystack[i]);
-		i++;
+		while (i < len)
+		{
+			name[i] = s[j];
+			i++;
+			j++;	
+		}
+		name[i] = '\0';
+		return (name);
 	}
-	return (0);	
+	return (name);
 }
