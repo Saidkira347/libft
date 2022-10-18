@@ -6,17 +6,17 @@
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:09:43 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/09 15:30:16 by souhanat         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:15:15 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	i = 0;
 	j = 0;
@@ -38,4 +38,3 @@ char *ft_strjoin(char const *s1, char const *s2)
 	str[i + j] = '\0';
 	return (str);
 }
-	

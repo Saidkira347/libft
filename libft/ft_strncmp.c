@@ -6,7 +6,7 @@
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:00:45 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/05 20:12:49 by souhanat         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:07:52 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	unsigned char *s11;
-	unsigned char *s12;
-	
+	size_t			i;
+	unsigned char	*s11;
+	unsigned char	*s12;
+
 	s11 = (unsigned char *)s1;
 	s12 = (unsigned char *)s2;
 	i = 0;
@@ -31,16 +31,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (-1);
 		if (s11[i] - s12[i] != 0)
 			return (1);
-		i++;			
+		i++;
 	}
 	return (0);
 }
-
-// int main(void)
-// {
-// 	char s1[20] = "said";
-// 	char s2[20] = "saod";
-	
-// 	printf("%d", ft_strncmp(s1,s2,3));
-// 	printf("%d", strncmp(s1,s2,3));
-// }

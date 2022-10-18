@@ -6,7 +6,7 @@
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:58:37 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/06 16:44:25 by souhanat         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:01:27 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
-	size_t slen;
-	size_t dlen;
-	
+	size_t	slen;
+	size_t	dlen;
+
 	i = 0;
 	j = 0;
 	slen = ft_strlen(src);
-	
 	if (dstsize == 0)
 		return (slen);
 	dlen = ft_strlen(dst);

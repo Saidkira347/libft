@@ -6,15 +6,16 @@
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:07:51 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/10 15:10:12 by souhanat         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:20:54 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
+
 	i = 0;
 	if (!s)
 		return ;

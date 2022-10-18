@@ -6,7 +6,7 @@
 /*   By: souhanat <souhanat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:05:19 by souhanat          #+#    #+#             */
-/*   Updated: 2022/10/05 17:39:13 by souhanat         ###   ########.fr       */
+/*   Updated: 2022/10/18 17:55:48 by souhanat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	if (s > d)
 	{
-		ft_memcpy(d,s,len);
+		ft_memcpy (d, s, len);
 	}
 	return (d);
 }
